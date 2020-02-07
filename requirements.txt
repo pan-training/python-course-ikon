@@ -10,4 +10,4 @@ scikit-learn
 ipywidgets
 ase
 nglview
-gpaw
+jupyter-nbextension
