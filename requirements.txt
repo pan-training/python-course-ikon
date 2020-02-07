@@ -8,3 +8,6 @@ bumps
 sasview
 scikit-learn
 ipywidgets
+ase
+nglview
+gpaw
