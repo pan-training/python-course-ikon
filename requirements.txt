@@ -3,6 +3,7 @@ matplotlib
 scipy
 pandas 
 h5py
+hdf5
 bumps
 sasview
 scikit-learn
