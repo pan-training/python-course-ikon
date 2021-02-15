@@ -1,6 +1,6 @@
 """
 This modules contains the exercises of the testing notebook.
-In order to execute the tests, open the Jupyter filebrowser to the left, click on the big plus icon at the top and select 'Terminal'. In the terminal, navigate to the folder that contains this file. Then, use
+In order to execute the tests, open the Jupyter filebrowser. Click on 'new' and select 'Terminal'. In the terminal, navigate to the folder that contains this file. Then, use
 
     pytest
     
@@ -123,23 +123,23 @@ def test_fit_parabola():
 def energy_transfer(ei_or_ef, tof, L1, L2, mode):
     """
     Compute the energy transfer for inelastic neutron scattering.
-    
-    All units are SI.
-    
+
+    Units in square brackets.
+
     Arguments:
-      ei_or_ef: In direct scattering: the initial energy.
-                In indirect scattering: the final energy.
-      tof: Time-of-flight.
-      L1: Primary flight path.
-      L2: Secondary flight path.
+      ei_or_ef: [J] In direct scattering: the initial energy.
+                    In indirect scattering: the final energy.
+      tof: [s] Time-of-flight.
+      L1: [m] Primary flight path.
+      L2: [m] Secondary flight path.
       mode: Either 'direct' or 'indirect'.
     """
-    t0 = np.sqrt(L1**2 * neutron_mass / ei_or_ef)
-    delta_t = tof - t0
     if mode == 'direct':
-        return ei_or_ef - neutron_mass * L2**2 / 2 / delta_t**2
+        t0 = np.sqrt(L1**2 * neutron_mass / ei_or_ef)
     elif mode == 'indirect':
-        return ei_or_ef - neutron_mass * L1**2 / 2 / delta_t**2
+        t0 = np.sqrt(L2**2 * neutron_mass / ei_or_ef)
+    delta_t = tof - t0
+    return ei_or_ef - neutron_mass * L2**2 / 2 / delta_t**2
 
 
 def test_energy_transfer():
