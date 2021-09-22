@@ -1,0 +1,27 @@
+# This is used for incremental CI builds and local development.
+# All dependencies should be installed here (i.e. the union of build, run, test and documentation build dependencies).
+# See https://scipp.github.io/developer/dependencies.html
+
+name: pythoncourse
+
+channels:
+  - conda-forge
+  - scipp
+
+dependencies:
+  - numpy
+  - matplotlib
+  - scipy
+  - pandas
+  - h5py
+  - hdf5
+  - bumps
+  - sasview
+  - scikit-learn
+  - ipywidgets
+  - ase
+  - nglview
+  - scipp
+  - pythreejs
+  - ipympl
+  - ipykernel<=6.3.1  # issue with pythreejs 3d plotting
