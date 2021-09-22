@@ -24,4 +24,4 @@ dependencies:
   - scipp
   - pythreejs
   - ipympl
-  - ipykernel=6.3.1  # issue with pythreejs 3d plotting
+  - ipykernel<=6.3.1  # issue with pythreejs 3d plotting
